@@ -1,145 +1,66 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_study_app/strings.dart';
+
+//State<StatefulWidget> createState() {
 
 void main() {
   runApp(FlutterBootcamp());
 }
 
-class FlutterBootcamp extends StatelessWidget{
+class FlutterBootcamp extends StatefulWidget{
+  @override
+  _FlutterBootcamp createState() => _FlutterBootcamp();
+}
 
+class _FlutterBootcamp extends State<FlutterBootcamp>{
+
+  List<String> notes = [
+    "Do the project",
+    "Reset Laptop",
+    "Empty Phone",
+    "Eat Proper Food",
+    "My name is Kush"
+  ];
+
+  Widget cardTemplate(singlenotes){
+    return Card(
+      shadowColor: Colors.red,
+      color: Colors.blueGrey,
+      margin: EdgeInsets.all(5),
+      child: Padding(
+        padding: EdgeInsets.all(15),
+        child: Column(
+          children: [
+            Text(
+              singlenotes,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        )
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
-            Strings.titleText,
+            "Notes App",
+            textAlign: TextAlign.center,
           ),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.green,
           centerTitle: true,
         ),
         body: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.red,
-                    child: Text(
-                      "A",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.green,
-                    child: Text(
-                        "B",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.blue,
-                    child: Text(
-                        "C",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.red,
-                    child: Text(
-                      "A",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/sky.jpg'),
-                    radius: 70,
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.blue,
-                    child: Text(
-                      "C",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.red,
-                    child: Text(
-                      "A",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.green,
-                    child: Text(
-                      "B",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.blue,
-                    child: Text(
-                      "C",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: (){
-
-          },
-          backgroundColor: Colors.purple,
-          child: Icon(
-            Icons.navigation,
-          ),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: notes.map((singlenote) => cardTemplate(singlenote)).toList(),
         ),
       ),
     );
