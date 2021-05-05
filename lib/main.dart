@@ -20,38 +20,125 @@ class FlutterBootcamp extends StatelessWidget{
           backgroundColor: Colors.blueAccent,
           centerTitle: true,
         ),
-        body: Center(
-          // ignore: deprecated_member_use
-          child: FlatButton.icon(
-              onPressed: (){
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-              },
-              icon: Icon(
-                  Icons.alternate_email,
-                color: Colors.white,
-              ),
-              label: Text(
-                "Click Me",
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  color: Colors.red,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
                 ),
-              ),
-              height: 50,
-              minWidth: 200,
-              color: Colors.blueAccent,
-          ),
+                Container(
+                  color: Colors.green,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  color: Colors.red,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.green,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  color: Colors.red,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.green,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Text(
+                    "Container",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: EdgeInsets.all(20),
+                ),
+              ],
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.blueAccent,
-          child: Icon(
-            Icons.alternate_email,
-            color: Colors.white,
-            size: 30,
-          ),
-          onPressed: () {
-            print("Button Was Clicked");
+          onPressed: (){
+
           },
+          backgroundColor: Colors.purple,
+          child: Icon(
+            Icons.navigation,
+          ),
         ),
       ),
     );
