@@ -12,22 +12,46 @@ class FlutterBootcamp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
             Strings.titleText,
           ),
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.blueAccent,
           centerTitle: true,
         ),
         body: Center(
-          child: Text(
-            Strings.bodyText,
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.deepOrange,
-              fontFamily: 'FiraCode',
-            ),
+          // ignore: deprecated_member_use
+          child: FlatButton.icon(
+              onPressed: (){
+
+              },
+              icon: Icon(
+                  Icons.alternate_email,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Click Me",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                ),
+              ),
+              height: 50,
+              minWidth: 200,
+              color: Colors.blueAccent,
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blueAccent,
+          child: Icon(
+            Icons.alternate_email,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () {
+            print("Button Was Clicked");
+          },
         ),
       ),
     );
