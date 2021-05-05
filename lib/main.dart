@@ -20,113 +20,114 @@ class FlutterBootcamp extends StatelessWidget{
           backgroundColor: Colors.blueAccent,
           centerTitle: true,
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Row(
               children: [
-                Container(
-                  color: Colors.red,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.red,
+                    child: Text(
+                      "A",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
                 ),
-                Container(
-                  color: Colors.green,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.green,
+                    child: Text(
+                        "B",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
                 ),
-                Container(
-                  color: Colors.blue,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.blue,
+                    child: Text(
+                        "C",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
-                ),
+                )
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Row(
               children: [
-                Container(
-                  color: Colors.red,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.red,
+                    child: Text(
+                      "A",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
                 ),
-                Container(
-                  color: Colors.green,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 2,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/sky.jpg'),
+                    radius: 70,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.blue,
+                    child: Text(
+                      "C",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
-                ),
-                Container(
-                  color: Colors.blue,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  padding: EdgeInsets.all(20),
-                ),
+                )
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Row(
               children: [
-                Container(
-                  color: Colors.red,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.red,
+                    child: Text(
+                      "A",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
                 ),
-                Container(
-                  color: Colors.green,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.green,
+                    child: Text(
+                      "B",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
                 ),
-                Container(
-                  color: Colors.blue,
-                  child: Text(
-                    "Container",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.blue,
+                    child: Text(
+                      "C",
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  padding: EdgeInsets.all(20),
-                ),
+                )
               ],
             ),
           ],
