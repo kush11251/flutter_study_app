@@ -1,8 +1,8 @@
+import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
 
 //https://reqres.in/api/users?page=2
 //Uri.https('reqres.in', '/api/users?page=2'
@@ -21,11 +21,13 @@ class _ApiTest extends State<ApiTest>{
   Map data;
   List userData;
 
-  Future getData() async{
-    http.Response response = await http.get('https://reqres.in/api/users?page=2');
+  Future<String> getData() async{
+    //var uri = Uri.https("reqres.in", "api/users?page=2");
+    var url = Uri.parse("https://reqres.in/api/users?page=2");
+    http.Response response = await http.get(url);
     data = json.decode(response.body);
     setState(() {
-      userData = data['data'];
+      userData = data["data"];
     });
   }
 
@@ -59,13 +61,55 @@ class _ApiTest extends State<ApiTest>{
                     Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        "${userData[index]['first_name']}, ${userData[index]['last_name']}",
+                        "Name: "
+                        "${userData[index]['first_name']} "
+                            " ${userData[index]['last_name']} ",
                       ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(5),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                                "${userData[index]['email']}",
+                              textDirection: TextDirection.rtl,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize: 10
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text("id: ${userData[index]['id']}")
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
             );
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.green,
+          child: Text(
+            "Click Me",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: (){
+            print("Nothing");
           },
         ),
       ),
